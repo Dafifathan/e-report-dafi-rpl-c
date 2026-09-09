@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDN E-Report — Lapor, Lacak, Selesaikan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0f172a;
+        --slate: #4b5768;
+        --slate-soft: #7c8798;
+        --blue: #2e5bea;
+        --blue-dark: #1e3fae;
+        --blue-bg: #d7e4fb;
+        --blue-pale: #f1f5fe;
+        --amber: #b4720b;
+        --amber-bg: #fbf0dc;
+        --green: #0f7a3d;
+        --green-bg: #e1f4e7;
+        --border: #e3e8f1;
+        --white: #ffffff;
+        --radius-s: 6px;
+        --radius-m: 10px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", sans-serif;
+        color: var(--slate);
+        background: var(--white);
+        line-height: 1.55;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Sora", sans-serif;
+        color: var(--navy);
+        margin: 0;
+        line-height: 1.2;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img,
+      svg {
+        display: block;
+      }
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 20px;
+        }
+      }
+
+      /* ---------- focus visibility ---------- */
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      summary:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ---------- NAVBAR ---------- */
+      header.nav {
+        background: var(--blue-bg);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      .brand-name {
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+        font-size: 19px;
+        color: var(--blue-dark);
+        letter-spacing: -0.01em;
+      }
+      nav.links {
+        display: flex;
+        gap: 34px;
+      }
+      nav.links a {
+        color: var(--blue-dark);
+        font-weight: 500;
+        font-size: 15px;
+        padding: 6px 2px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.15s ease;
+      }
+      nav.links a:hover {
+        border-bottom-color: var(--blue-dark);
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .btn-nav {
+        background: var(--blue);
+        color: var(--white) !important;
+        padding: 9px 18px;
+        border-radius: var(--radius-s);
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--blue-dark);
+        margin: 5px 0;
+      }
+      @media (max-width: 860px) {
+        nav.links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--blue-bg);
+          flex-direction: column;
+          gap: 0;
+          padding: 8px 32px 18px;
+          display: none;
+        }
+        nav.links.open {
+          display: flex;
+        }
+        nav.links a {
+          padding: 12px 0;
+          border-bottom: 1px solid rgba(30, 63, 174, 0.15);
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .nav-cta .btn-nav {
+          display: none;
+        }
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        padding: 76px 0 88px;
+        background: linear-gradient(
+          180deg,
+          var(--blue-pale) 0%,
+          var(--white) 100%
+        );
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.85fr;
+        gap: 56px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .eyebrow-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--blue-dark);
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+      .eyebrow-line .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+      h1.hero-title {
+        font-size: 44px;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        max-width: 12.5ch;
+      }
+      @media (max-width: 640px) {
+        h1.hero-title {
+          font-size: 32px;
+        }
+      }
+      .hero-sub {
+        margin-top: 20px;
+        font-size: 17px;
+        max-width: 46ch;
+        color: var(--slate);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: var(--navy);
+        color: var(--white);
+        padding: 14px 24px;
+        border-radius: var(--radius-s);
+        font-weight: 600;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        background: #1c2b45;
+      }
+      .btn-ghost {
+        padding: 14px 24px;
+        border-radius: var(--radius-s);
+        font-weight: 600;
+        font-size: 15px;
+        border: 1px solid var(--border);
+        color: var(--navy);
+        background: var(--white);
+      }
+      .btn-ghost:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 36px;
+        margin-top: 44px;
+        padding-top: 28px;
+        border-top: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+      .stat b {
+        display: block;
+        font-family: "Sora", sans-serif;
+        font-size: 24px;
+        color: var(--navy);
+        font-weight: 700;
+      }
+      .stat span {
+        font-size: 13px;
+        color: var(--slate-soft);
+      }
+
+      /* Tracker card in hero */
+      .tracker-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-m);
+        padding: 28px;
+        box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.35);
+      }
+      .tracker-card h3 {
+        font-size: 16px;
+      }
+      .tracker-card p {
+        margin: 8px 0 18px;
+        font-size: 13.5px;
+        color: var(--slate-soft);
+      }
+      .tracker-field {
+        display: flex;
+        gap: 8px;
+      }
+      .tracker-field input {
+        flex: 1;
+        padding: 12px 14px;
+        border-radius: var(--radius-s);
+        border: 1px solid var(--border);
+        font-family: inherit;
+        font-size: 14px;
+        color: var(--navy);
+      }
+      .tracker-field button {
+        background: var(--blue);
+        color: var(--white);
+        border: none;
+        padding: 0 20px;
+        border-radius: var(--radius-s);
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .tracker-field button:hover {
+        background: var(--blue-dark);
+      }
+      .tracker-result {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border-radius: var(--radius-s);
+        background: var(--blue-pale);
+        font-size: 13.5px;
+        color: var(--navy);
+        display: none;
+      }
+      .tracker-result.show {
+        display: block;
+      }
+      .tracker-result .badge {
+        margin-left: 6px;
+      }
+
+      /* ---------- SECTION HEADS ---------- */
+      .section {
+        padding: 84px 0;
+      }
+      .section-alt {
+        background: var(--blue-pale);
+      }
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 48px;
+      }
+      .section-head h2 {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .section-head p {
+        margin-top: 14px;
+        font-size: 16px;
+      }
+
+      /* ---------- ABOUT ---------- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+      @media (max-width: 860px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      .about-grid p {
+        font-size: 16px;
+      }
+      .pillars {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .pillar {
+        display: flex;
+        gap: 16px;
+        padding: 22px 0;
+        border-top: 1px solid var(--border);
+      }
+      .pillar:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+      .pillar-icon {
+        flex: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--blue-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pillar h4 {
+        font-size: 16px;
+      }
+      .pillar p {
+        margin: 6px 0 0;
+        font-size: 14.5px;
+      }
+
+      /* ---------- SERVICES ---------- */
+      .service-row {
+        display: grid;
+        grid-template-columns: 56px 1fr auto;
+        gap: 22px;
+        align-items: start;
+        padding: 26px 0;
+        border-top: 1px solid var(--border);
+      }
+      .service-row:last-child {
+        border-bottom: 1px solid var(--border);
+      }
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: var(--blue-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .service-row h3 {
+        font-size: 18px;
+      }
+      .service-row p {
+        margin-top: 6px;
+        font-size: 14.5px;
+        max-width: 56ch;
+      }
+      .service-link {
+        align-self: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--blue);
+        white-space: nowrap;
+      }
+      @media (max-width: 700px) {
+        .service-row {
+          grid-template-columns: 44px 1fr;
+        }
+        .service-link {
+          grid-column: 2;
+          margin-top: 4px;
+        }
+      }
+
+      /* ---------- RECENT ---------- */
+      .feed {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-m);
+        overflow: hidden;
+      }
+      .feed-item {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 18px;
+        align-items: center;
+        padding: 20px 24px;
+        border-top: 1px solid var(--border);
+        background: var(--white);
+      }
+      .feed-item:first-child {
+        border-top: none;
+      }
+      .tag {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--blue-dark);
+        background: var(--blue-bg);
+        padding: 5px 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .feed-title {
+        min-width: 0;
+      }
+      .feed-title b {
+        display: block;
+        font-size: 15px;
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .feed-title span {
+        font-size: 13px;
+        color: var(--slate-soft);
+      }
+      .badge {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .badge.proses {
+        background: var(--amber-bg);
+        color: var(--amber);
+      }
+      .badge.selesai {
+        background: var(--green-bg);
+        color: var(--green);
+      }
+      .badge.tinjau {
+        background: var(--blue-bg);
+        color: var(--blue-dark);
+      }
+      .feed-time {
+        font-size: 13px;
+        color: var(--slate-soft);
+        white-space: nowrap;
+      }
+      @media (max-width: 700px) {
+        .feed-item {
+          grid-template-columns: 1fr auto;
+          row-gap: 8px;
+          padding: 18px;
+        }
+        .feed-title {
+          grid-column: 1 / -1;
+          order: 3;
+        }
+        .feed-time {
+          display: none;
+        }
+      }
+
+      /* ---------- FAQ ---------- */
+      .faq-list {
+        max-width: 760px;
+      }
+      details.faq {
+        border-top: 1px solid var(--border);
+        padding: 20px 0;
+      }
+      details.faq:last-child {
+        border-bottom: 1px solid var(--border);
+      }
+      details.faq summary {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--navy);
+      }
+      details.faq summary::-webkit-details-marker {
+        display: none;
+      }
+      details.faq summary .plus {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        position: relative;
+      }
+      details.faq summary .plus::before,
+      details.faq summary .plus::after {
+        content: "";
+        position: absolute;
+        background: var(--blue);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      details.faq summary .plus::before {
+        width: 14px;
+        height: 2px;
+      }
+      details.faq summary .plus::after {
+        width: 2px;
+        height: 14px;
+        transition: transform 0.15s ease;
+      }
+      details.faq[open] summary .plus::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+        opacity: 0;
+      }
+      details.faq p {
+        margin: 14px 0 0;
+        font-size: 14.5px;
+        max-width: 64ch;
+      }
+
+      /* ---------- CTA STRIP ---------- */
+      .cta-strip {
+        background: var(--navy);
+        border-radius: var(--radius-m);
+        padding: 48px 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .cta-strip h3 {
+        color: var(--white);
+        font-size: 24px;
+        max-width: 20ch;
+      }
+      .cta-strip .btn-primary {
+        background: var(--blue);
+      }
+      .cta-strip .btn-primary:hover {
+        background: var(--blue-dark);
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--blue-pale);
+        padding: 56px 0 28px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 32px;
+        padding-bottom: 36px;
+      }
+      @media (max-width: 760px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .footer-grid h5 {
+        font-family: "Sora", sans-serif;
+        font-size: 13px;
+        color: var(--slate-soft);
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+      .footer-grid ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-grid a {
+        font-size: 14.5px;
+        color: var(--slate);
+      }
+      .footer-grid a:hover {
+        color: var(--blue);
+      }
+      .footer-brand p {
+        font-size: 14px;
+        margin-top: 12px;
+        max-width: 32ch;
+        color: var(--slate);
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: var(--slate-soft);
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="brand">
+          <span class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2L4 5.5V11c0 5.2 3.4 9.7 8 11 4.6-1.3 8-5.8 8-11V5.5L12 2z"
+                fill="#2E5BEA"
+              />
+              <path
+                d="M9 12.2l2.1 2.1L15.5 10"
+                stroke="#fff"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-name">IDN E-Report</span>
+        </div>
+        <nav class="links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#recent">Recent</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-cta">
+          <a href="#report" class="btn-nav">Buat Laporan</a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Buka menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow-line">
+              <span class="dot"></span>Layanan aktif 24 jam, ditangani tim
+              verifikasi manusia
+            </div>
+            <h1 class="hero-title">Satu laporan bisa jadi awal perbaikan.</h1>
+            <p class="hero-sub">
+              IDN E-Report menghubungkan warga dengan instansi terkait untuk
+              menindaklanjuti pengaduan, kerusakan fasilitas, dan dugaan
+              pelanggaran — dengan status yang bisa dipantau setiap saat.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" id="report">Buat Laporan Baru</button>
+              <a href="#services" class="btn-ghost">Lihat Jenis Layanan</a>
+            </div>
+            <div class="stat-row">
+              <div class="stat">
+                <b>48.320</b><span>Laporan terselesaikan</span>
+              </div>
+              <div class="stat">
+                <b>2 hari</b><span>Rata-rata waktu respons</span>
+              </div>
+              <div class="stat">
+                <b>34</b><span>Instansi mitra terhubung</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tracker-card">
+            <h3>Lacak status laporan</h3>
+            <p>
+              Masukkan nomor tiket yang dikirim ke email Anda saat laporan
+              dibuat.
+            </p>
+            <div class="tracker-field">
+              <input
+                type="text"
+                id="trackInput"
+                placeholder="Contoh: JR-88231"
+                aria-label="Nomor tiket laporan"
+              />
+              <button id="trackBtn">Lacak</button>
+            </div>
+            <div class="tracker-result" id="trackResult"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="wrap about-grid">
+          <div>
+            <div class="section-head" style="margin-bottom: 24px">
+              <h2>Dibangun agar laporan tidak berhenti di kotak masuk.</h2>
+            </div>
+            <p>
+              Banyak pengaduan warga berakhir tanpa kejelasan karena tersebar di
+              kanal yang berbeda-beda dan sulit ditelusuri. IDN E-Report
+              merapikan proses itu: satu formulir terstruktur, diteruskan ke
+              instansi yang tepat, dan setiap perubahan status tercatat sehingga
+              pelapor tahu ke mana laporannya berjalan.
+            </p>
+            <p style="margin-top: 16px">
+              Platform ini digunakan oleh masyarakat umum maupun petugas
+              lapangan untuk mencatat temuan, mengajukan pengaduan, dan memantau
+              tindak lanjut dari instansi terkait.
+            </p>
+          </div>
+          <div class="pillars">
+            <div class="pillar">
+              <span class="pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 12l5 5L20 6"
+                    stroke="#2E5BEA"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4>Transparan</h4>
+                <p>
+                  Setiap laporan mendapat nomor tiket dan riwayat status yang
+                  bisa dilihat kapan saja, tanpa perlu menelepon berulang.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"
+                    stroke="#2E5BEA"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4>Cepat diteruskan</h4>
+                <p>
+                  Sistem mengarahkan laporan langsung ke instansi yang berwenang
+                  berdasarkan kategori dan lokasi kejadian.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2l7 3v6c0 5-3.4 8.7-7 10-3.6-1.3-7-5-7-10V5l7-3z"
+                    stroke="#2E5BEA"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h4>Identitas terlindungi</h4>
+                <p>
+                  Data pelapor tidak dibagikan ke publik, dan pelaporan anonim
+                  tersedia untuk kasus yang bersifat sensitif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section section-alt" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Kanal pengaduan sesuai jenis persoalan.</h2>
+            <p>
+              Pilih kategori yang paling sesuai agar laporan langsung sampai ke
+              pihak yang tepat.
+            </p>
+          </div>
+
+          <div class="service-row">
+            <span class="service-icon"
+              ><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 4h16v12H7l-3 3V4z"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+            <div>
+              <h3>Pengaduan Pelayanan Publik</h3>
+              <p>
+                Keluhan terkait layanan di kantor pemerintah, rumah sakit, atau
+                sekolah — mulai dari lambatnya proses hingga sikap petugas.
+              </p>
+            </div>
+            <a href="#report" class="service-link">Buat laporan</a>
+          </div>
+
+          <div class="service-row">
+            <span class="service-icon"
+              ><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+            <div>
+              <h3>Dugaan Korupsi &amp; Penyalahgunaan Wewenang</h3>
+              <p>
+                Laporan dapat dikirim secara anonim dan diteruskan ke instansi
+                pengawas yang berwenang menindaklanjuti.
+              </p>
+            </div>
+            <a href="#report" class="service-link">Buat laporan</a>
+          </div>
+
+          <div class="service-row">
+            <span class="service-icon"
+              ><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 20l4-10 4 6 3-8 4 4 3-6"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+            <div>
+              <h3>Kerusakan Sarana &amp; Infrastruktur</h3>
+              <p>
+                Jalan berlubang, lampu jalan mati, saluran air tersumbat, atau
+                fasilitas umum lain yang butuh perbaikan.
+              </p>
+            </div>
+            <a href="#report" class="service-link">Buat laporan</a>
+          </div>
+
+          <div class="service-row">
+            <span class="service-icon"
+              ><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2v6M12 16v6M2 12h6M16 12h6"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3.2"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                /></svg
+            ></span>
+            <div>
+              <h3>Kondisi Darurat &amp; Bencana</h3>
+              <p>
+                Kanal prioritas untuk kejadian yang memerlukan tanggapan segera
+                dari instansi terkait.
+              </p>
+            </div>
+            <a href="#report" class="service-link">Buat laporan</a>
+          </div>
+
+          <div class="service-row">
+            <span class="service-icon"
+              ><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 4h9l3 3v13H6V4z"
+                  stroke="#2E5BEA"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 11h6M9 15h6"
+                  stroke="#2E5BEA"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                /></svg
+            ></span>
+            <div>
+              <h3>Konsultasi &amp; Pendampingan</h3>
+              <p>
+                Bila kasus Anda memerlukan penjelasan prosedur atau arahan
+                sebelum melapor, tim kami dapat membantu lebih dulu.
+              </p>
+            </div>
+            <a href="#report" class="service-link">Ajukan konsultasi</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECENT -->
+      <section class="section" id="recent">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Aktivitas laporan terbaru.</h2>
+            <p>
+              Contoh laporan yang sedang berjalan di sistem — identitas pelapor
+              disamarkan demi privasi.
+            </p>
+          </div>
+
+          <div class="feed">
+            <div class="feed-item">
+              <span class="tag">Infrastruktur</span>
+              <div class="feed-title">
+                <b>Jalan berlubang di Jl. Merdeka Raya</b
+                ><span>Tiket #JR-88231 · Bandung</span>
+              </div>
+              <span class="badge tinjau">Ditinjau</span>
+              <span class="feed-time">2 jam lalu</span>
+            </div>
+            <div class="feed-item">
+              <span class="tag">Pelayanan Publik</span>
+              <div class="feed-title">
+                <b>Antrean layanan KTP tidak sesuai jadwal</b
+                ><span>Tiket #PL-77120 · Surabaya</span>
+              </div>
+              <span class="badge proses">Diproses</span>
+              <span class="feed-time">5 jam lalu</span>
+            </div>
+            <div class="feed-item">
+              <span class="tag">Darurat</span>
+              <div class="feed-title">
+                <b>Longsor kecil menutup akses jalan desa</b
+                ><span>Tiket #DR-90042 · Garut</span>
+              </div>
+              <span class="badge proses">Diproses</span>
+              <span class="feed-time">7 jam lalu</span>
+            </div>
+            <div class="feed-item">
+              <span class="tag">Infrastruktur</span>
+              <div class="feed-title">
+                <b>Lampu penerangan jalan mati total</b
+                ><span>Tiket #JR-86590 · Semarang</span>
+              </div>
+              <span class="badge selesai">Selesai</span>
+              <span class="feed-time">1 hari lalu</span>
+            </div>
+            <div class="feed-item">
+              <span class="tag">Pengawasan</span>
+              <div class="feed-title">
+                <b>Dugaan pungutan liar layanan administrasi</b
+                ><span>Tiket #PW-65310 · Anonim</span>
+              </div>
+              <span class="badge tinjau">Ditinjau</span>
+              <span class="feed-time">1 hari lalu</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section-alt" id="faq">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Pertanyaan yang sering diajukan.</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq" open>
+              <summary>
+                Apakah saya wajib mencantumkan identitas saat melapor?<span
+                  class="plus"
+                ></span>
+              </summary>
+              <p>
+                Tidak. Untuk kategori tertentu seperti dugaan korupsi atau
+                pengawasan, laporan anonim tersedia. Namun mencantumkan kontak
+                mempermudah instansi menghubungi Anda bila butuh informasi
+                tambahan.
+              </p>
+            </details>
+            <details class="faq">
+              <summary>
+                Berapa lama laporan biasanya ditindaklanjuti?<span
+                  class="plus"
+                ></span>
+              </summary>
+              <p>
+                Rata-rata laporan mendapat tanggapan pertama dalam 2 hari kerja.
+                Waktu penyelesaian selanjutnya bergantung pada kompleksitas
+                kasus dan instansi yang menangani.
+              </p>
+            </details>
+            <details class="faq">
+              <summary>
+                Bagaimana cara mengetahui laporan saya sudah diterima?<span
+                  class="plus"
+                ></span>
+              </summary>
+              <p>
+                Setiap laporan yang berhasil dikirim akan mendapat nomor tiket
+                melalui email. Nomor ini dapat digunakan untuk melacak status
+                pada kolom pencarian di bagian atas halaman.
+              </p>
+            </details>
+            <details class="faq">
+              <summary>
+                Apakah laporan bisa diajukan untuk orang lain?<span
+                  class="plus"
+                ></span>
+              </summary>
+              <p>
+                Bisa, selama Anda menyertakan informasi kejadian yang cukup
+                jelas. Sertakan hubungan Anda dengan pihak yang dilaporkan agar
+                proses verifikasi lebih lancar.
+              </p>
+            </details>
+            <details class="faq">
+              <summary>
+                Apa yang terjadi jika laporan saya ditolak?<span
+                  class="plus"
+                ></span>
+              </summary>
+              <p>
+                Anda akan menerima penjelasan alasan penolakan melalui email,
+                beserta saran perbaikan atau kanal lain yang lebih sesuai jika
+                laporan berada di luar cakupan layanan ini.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section" style="padding-top: 0">
+        <div class="wrap">
+          <div class="cta-strip">
+            <h3>Punya sesuatu yang perlu ditindaklanjuti hari ini?</h3>
+            <button class="btn-primary">Buat Laporan Baru</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand">
+              <span class="brand-mark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2L4 5.5V11c0 5.2 3.4 9.7 8 11 4.6-1.3 8-5.8 8-11V5.5L12 2z"
+                    fill="#2E5BEA"
+                  />
+                  <path
+                    d="M9 12.2l2.1 2.1L15.5 10"
+                    stroke="#fff"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="brand-name" style="font-size: 17px"
+                >IDN E-Report</span
+              >
+            </div>
+            <p>
+              Kanal pelaporan warga yang menghubungkan pengaduan dengan instansi
+              yang berwenang menindaklanjuti.
+            </p>
+          </div>
+          <div>
+            <h5>Navigasi</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#recent">Recent</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Layanan</h5>
+            <ul>
+              <li><a href="#services">Pelayanan Publik</a></li>
+              <li><a href="#services">Dugaan Korupsi</a></li>
+              <li><a href="#services">Infrastruktur</a></li>
+              <li><a href="#services">Darurat &amp; Bencana</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Kontak</h5>
+            <ul>
+              <li>
+                <a href="mailto:bantuan@idnereport.id">bantuan@idnereport.id</a>
+              </li>
+              <li><a href="tel:1500123">1500-123</a></li>
+              <li><a href="#">Senin–Jumat, 08.00–20.00</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 IDN E-Report. Seluruh hak cipta dilindungi.</span>
+          <span>Kebijakan Privasi · Syarat Layanan</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // mobile nav toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      menuToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      navLinks.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }),
+      );
+
+      // demo tracker interaction
+      const trackBtn = document.getElementById("trackBtn");
+      const trackInput = document.getElementById("trackInput");
+      const trackResult = document.getElementById("trackResult");
+      const demoTickets = {
+        "JR-88231": {
+          title: "Jalan berlubang di Jl. Merdeka Raya",
+          status: "Ditinjau",
+          cls: "tinjau",
+        },
+        "PL-77120": {
+          title: "Antrean layanan KTP tidak sesuai jadwal",
+          status: "Diproses",
+          cls: "proses",
+        },
+        "JR-86590": {
+          title: "Lampu penerangan jalan mati total",
+          status: "Selesai",
+          cls: "selesai",
+        },
+      };
+      function runTrack() {
+        const code = trackInput.value.trim().toUpperCase();
+        if (!code) {
+          trackResult.textContent = "Masukkan nomor tiket terlebih dahulu.";
+          trackResult.classList.add("show");
+          return;
+        }
+        const found = demoTickets[code];
+        if (found) {
+          trackResult.innerHTML = `${found.title} — status <span class="badge ${found.cls}">${found.status}</span>`;
+        } else {
+          trackResult.textContent =
+            "Tiket tidak ditemukan. Periksa kembali nomor pada email konfirmasi Anda.";
+        }
+        trackResult.classList.add("show");
+      }
+      trackBtn.addEventListener("click", runTrack);
+      trackInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") runTrack();
+      });
+    </script>
+  </body>
+</html>
