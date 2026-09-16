@@ -23,3 +23,21 @@ section {
         padding-bottom: 50px;
     }
 }
+
+.about .col img {
+    width: 100%;
+}
+
+footer {
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.footer-link {
+    opacity: 75%;
+}
+
+.footer-link:hover {
+    color: #f43538;
+    opacity: 100%;
+}
