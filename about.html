@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | E-Report IDN</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- css bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"/>
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- cdn fontawesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+     <!-- cdn animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- cdn aos css -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="animate__animated animate__fadeInDown navbar navbar-expand-lg bg-body-tertiary bg-primary-subtle py-4">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+          <img
+            src="./assets/images/logo.png"
+            alt="Logo"
+            width="30"
+            class="d-inline-block align-text-top rounded"
+          />
+          <span class="fw-bold text-primary">IDN E-Report</span>
+        </a>
+        <button
+          class="navbar-toggler shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-4 pt-4 pt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-primary" aria-current="page" href="index.html#hero"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.html#Tentang Kami">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.html#Layanan Kami">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.html#Recent">Recent</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.html#faq">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Panduan Pengguna -->
+    <section
+  id="panduanPengguna"
+  class="py-5"
+  style="background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 100%);"
+>
+  <div class="container">
+
+    <!-- Hero -->
+    <div
+      class="row align-items-center g-4 rounded-4 p-4 p-lg-5 mb-5 shadow-sm overflow-hidden"
+      style="background: linear-gradient(135deg, #0d6efd, #073b91);"
+      data-aos="fade-up"
+    >
+      <div class="col-lg-7 text-white">
+        <span class="badge rounded-pill bg-white text-primary px-3 py-2 mb-3">
+          <i class="fa-solid fa-book-open me-2"></i>Panduan Pengguna
+        </span>
+
+        <h1 class="display-5 fw-bold mb-3">
+          Laporkan Masalah,<br />
+          <span class="text-warning">Ciptakan Perubahan</span>
+        </h1>
+
+        <p class="lead opacity-75 mb-4">
+          Pelajari cara menggunakan E-Report IDN untuk membuat laporan,
+          mengirim bukti, dan memantau perkembangan laporan Anda.
+        </p>
+
+        <a href="#langkahPenggunaan" class="btn btn-light text-primary rounded-pill px-4">
+          Mulai Panduan
+          <i class="fa-solid fa-arrow-down ms-2"></i>
+        </a>
+      </div>
+
+      <div class="col-lg-5 text-center">
+        <div
+          class="bg-white bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center"
+          style="width: 230px; height: 230px;"
+        >
+          <i class="fa-solid fa-file-circle-check text-white" style="font-size: 7rem;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistik -->
+    <div id="panduanStats" class="row g-3 mb-5"></div>
+
+    <!-- Judul langkah -->
+    <div id="langkahPenggunaan" class="text-center mb-5" data-aos="fade-up">
+      <span class="badge rounded-pill bg-primary-subtle text-primary px-3 py-2">
+        <i class="fa-solid fa-list-check me-2"></i>Langkah Penggunaan
+      </span>
+
+      <h2 class="fw-bold mt-3 mb-2">Cara Menggunakan E-Report</h2>
+
+      <p class="text-secondary mb-0">
+        Ikuti enam langkah mudah berikut untuk mengirim laporan.
+      </p>
+    </div>
+
+    <!-- Langkah -->
+    <div id="panduanSteps" class="row g-4 mb-5"></div>
+
+    <!-- FAQ dan Tips -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+          <div class="card-body p-4 p-lg-5">
+            <h4 class="fw-bold mb-4">
+              <i class="fa-solid fa-circle-question text-primary me-2"></i>
+              Pertanyaan Umum
+            </h4>
+            <div id="panduanFaq" class="accordion"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5" data-aos="fade-left">
+        <div
+          class="card border-0 shadow-sm rounded-4 h-100 text-white"
+          style="background: linear-gradient(145deg, #198754, #0f5132);"
+        >
+          <div class="card-body p-4 p-lg-5">
+            <i class="fa-solid fa-lightbulb fa-2x mb-3 text-warning"></i>
+
+            <h4 class="fw-bold mb-3">Tips Membuat Laporan</h4>
+
+            <p class="opacity-75">
+              Laporan yang jelas akan membantu proses verifikasi menjadi lebih cepat.
+            </p>
+
+            <ul id="panduanTips" class="ps-3 mb-0"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bantuan -->
+    <div
+      class="text-center rounded-4 p-4 p-lg-5 shadow-sm"
+      style="background: #e7f1ff;"
+      data-aos="zoom-in"
+    >
+      <div
+        class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary text-white mb-3"
+        style="width: 64px; height: 64px;"
+      >
+        <i class="fa-solid fa-headset fa-xl"></i>
+      </div>
+
+      <h3 class="fw-bold">Masih Membutuhkan Bantuan?</h3>
+
+      <p class="text-secondary mb-4">
+        Hubungi admin jika Anda mengalami kendala saat menggunakan sistem.
+      </p>
+
+      <a
+        href="mailto:dafifathan05@gmail.com"
+        class="btn btn-primary rounded-pill px-4"
+      >
+        <i class="fa-solid fa-envelope me-2"></i>
+        Hubungi Admin
+      </a>
+    </div>
+  </div>
+    </section>
+
+    <script>
+  const buatElemenPanduan = (tag, className = "", text = "") => {
+    const element = document.createElement(tag);
+    element.className = className;
+
+    if (text) {
+      element.textContent = text;
+    }
+
+    return element;
+  };
+
+  const aturStylePanduan = (element, styles) => {
+    Object.assign(element.style, styles);
+    return element;
+  };
+
+  // Statistik
+  const statistikPanduan = [
+    ["fa-file-circle-plus", "Buat Laporan", "Mudah dan cepat"],
+    ["fa-bolt", "Proses Cepat", "Informasi terkini"],
+    ["fa-shield-halved", "Data Aman", "Privasi terjaga"],
+    ["fa-comments", "Responsif", "Mudah dipantau"],
+  ];
+
+  const statsContainer = document.getElementById("panduanStats");
+
+  statistikPanduan.forEach(([icon, title, description]) => {
+    const column = buatElemenPanduan("div", "col-6 col-lg-3");
+
+    const card = buatElemenPanduan(
+      "div",
+      "card border-0 shadow-sm rounded-4 h-100 text-center p-3"
+    );
+
+    const iconElement = aturStylePanduan(
+      buatElemenPanduan("i", `fa-solid ${icon} text-primary mb-2`),
+      { fontSize: "2rem" }
+    );
+
+    card.append(
+      iconElement,
+      buatElemenPanduan("h6", "fw-bold mb-1", title),
+      buatElemenPanduan("small", "text-secondary", description)
+    );
+
+    column.appendChild(card);
+    statsContainer.appendChild(column);
+  });
+
+  // Langkah penggunaan
+  const langkahPanduan = [
+    {
+      icon: "fa-user-plus",
+      warna: "primary",
+      judul: "Buat Akun",
+      isi: "Daftarkan diri menggunakan nama, email, dan password yang valid.",
+    },
+    {
+      icon: "fa-right-to-bracket",
+      warna: "success",
+      judul: "Login ke Sistem",
+      isi: "Masuk menggunakan akun untuk mengakses fitur pelaporan.",
+    },
+    {
+      icon: "fa-file-circle-plus",
+      warna: "warning",
+      judul: "Buat Laporan",
+      isi: "Isi judul, kategori, lokasi, dan deskripsi secara lengkap.",
+    },
+    {
+      icon: "fa-camera",
+      warna: "danger",
+      judul: "Tambahkan Bukti",
+      isi: "Unggah foto atau dokumen pendukung laporan.",
+    },
+    {
+      icon: "fa-paper-plane",
+      warna: "info",
+      judul: "Kirim Laporan",
+      isi: "Periksa kembali data lalu kirim laporan ke sistem.",
+    },
+    {
+      icon: "fa-clock-rotate-left",
+      warna: "secondary",
+      judul: "Pantau Status",
+      isi: "Lihat perkembangan laporan melalui halaman riwayat.",
+    },
+  ];
+
+  const stepsContainer = document.getElementById("panduanSteps");
+
+  langkahPanduan.forEach((item, index) => {
+    const column = buatElemenPanduan("div", "col-md-6 col-lg-4");
+
+    const card = aturStylePanduan(
+      buatElemenPanduan(
+        "div",
+        "card border-0 shadow-sm rounded-4 h-100 position-relative"
+      ),
+      {
+        transition: "all 0.25s ease",
+        backgroundColor: "#ffffff",
+      }
+    );
+
+    card.setAttribute("data-aos", "fade-up");
+    card.setAttribute("data-aos-delay", `${index * 100}`);
+
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-8px)";
+      card.style.boxShadow = "0 1rem 3rem rgba(13, 110, 253, .15)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+      card.style.boxShadow = "";
+    });
+
+    const number = buatElemenPanduan(
+      "span",
+      `badge bg-${item.warna} rounded-pill position-absolute top-0 end-0 m-3`,
+      `0${index + 1}`
+    );
+
+    const body = buatElemenPanduan("div", "card-body p-4");
+
+    const icon = aturStylePanduan(
+      buatElemenPanduan("i", `fa-solid ${item.icon} text-${item.warna} mb-3`),
+      { fontSize: "2.7rem" }
+    );
+
+    body.append(
+      icon,
+      buatElemenPanduan("h5", "fw-bold", item.judul),
+      buatElemenPanduan("p", "text-secondary mb-0", item.isi)
+    );
+
+    card.append(number, body);
+    column.appendChild(card);
+    stepsContainer.appendChild(column);
+  });
+
+  // FAQ
+  const faqData = [
+    {
+      question: "Apakah laporan dapat diedit?",
+      answer: "Laporan dapat diperbarui selama belum diproses oleh admin.",
+    },
+    {
+      question: "Bagaimana cara melihat status laporan?",
+      answer: "Buka menu Riwayat Laporan untuk melihat status terbaru laporan Anda.",
+    },
+    {
+      question: "Apa saja bukti yang dapat diunggah?",
+      answer: "Anda dapat mengetik tulisan maupun mengunggah foto atau dokumen yang berkaitan dengan laporan.",
+    },
+  ];
+
+  const faqContainer = document.getElementById("panduanFaq");
+
+  faqData.forEach((item, index) => {
+    const faqItem = buatElemenPanduan(
+      "div",
+      "accordion-item border-0 rounded-3 mb-2 overflow-hidden"
+    );
+
+    const heading = buatElemenPanduan("h2", "accordion-header");
+
+    const button = buatElemenPanduan(
+      "button",
+      `accordion-button fw-semibold ${index !== 0 ? "collapsed" : ""}`,
+      item.question
+    );
+
+    button.type = "button";
+    button.setAttribute("data-bs-toggle", "collapse");
+    button.setAttribute("data-bs-target", `#jawabanPanduan${index}`);
+
+    const answer = buatElemenPanduan(
+      "div",
+      `accordion-collapse collapse ${index === 0 ? "show" : ""}`
+    );
+
+    answer.id = `jawabanPanduan${index}`;
+
+    const answerBody = buatElemenPanduan(
+      "div",
+      "accordion-body text-secondary",
+      item.answer
+    );
+
+    heading.appendChild(button);
+    answer.appendChild(answerBody);
+    faqItem.append(heading, answer);
+    faqContainer.appendChild(faqItem);
+  });
+
+  // Tips
+  const tipsPanduan = [
+    "Gunakan judul laporan yang singkat dan jelas.",
+    "Tuliskan lokasi kejadian secara lengkap.",
+    "Sertakan bukti yang sesuai dengan laporan.",
+    "Gunakan bahasa yang sopan dan mudah dipahami.",
+  ];
+
+  const tipsContainer = document.getElementById("panduanTips");
+
+  tipsPanduan.forEach((tip) => {
+    const item = buatElemenPanduan("li", "mb-3", tip);
+    tipsContainer.appendChild(item);
+  });
+    </script>
+
+   <!-- footer -->
+      <footer class="bg-primary py-4">
+      <div class="container">
+        <div class="row justify-content-between row-gap-4 row-gap-md-0">
+          <div class="col-md-4 text-white">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img class="rounded" src="./assets/images/logo.png" style="width: 30px;" alt="">
+              <h3 class="mb-0 fw-bold">E-report</h3>
+            </div>
+            <p class="opacity-75 lh-lg mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, nostrum velit? Nisi quae sunt perferendis?</p>
+          </div>
+          <div class="col-md-2 text-white d-flex flex-column gap-2">
+            <h4 class="fw-bold">Menu</h4>
+            <a class="text-white text-decoration-none footer-link" href="#hero">Home</a>
+            <a class="text-white text-decoration-none footer-link" href="#Tentang Kami">About</a>
+            <a class="text-white text-decoration-none footer-link" href="#Layanan Kami">Services</a>
+            <a class="text-white text-decoration-none footer-link" href="#recent">Recents</a>
+            <a class="text-white text-decoration-none footer-link" href="#faq">FAQ</a>
+          </div>
+          <div class="col-md-4 text-white d-flex flex-column gap-3">
+            <h4 class="fw-bold">Contact Us</h4>
+            <a class="text-white text-decoration-none footer-link align-items-center mr-4 d-flex align-items-center gap-2" href="mailto:dafifathan05@gmail.com">
+              <i class="fa-solid fa-envelope"></i> dafifathan05@gmail.com
+            </a>
+            <a class="text-white text-decoration-none footer-link align-items-center mr-4 d-flex align-items-center gap-2" href="https://wa.me/6285603512213" target="_blank">
+              <i class="fa-brands fa-square-whatsapp"></i> +62 856-0351-2213
+            </a>
+            <a class="text-white text-decoration-none footer-link align-items-center mr-4 d-flex align-items-center gap-2" href="https://maps.app.goo.gl/bZyRqLyM4ivpwrcC8" target="_blank">
+              <i class="fa-solid fa-location-dot"></i> Jl. Raya Jonggol-Dayeuh, Sukanegara, Kec. Jonggol, Kabupaten Bogor, Jawa Barat 16830
+            </a>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p class="text-white text-center mt-4 mb-0 opacity-75">
+            &copy; Copyright by: <span class="fw-bold">X RPL C 2026</span> E-Report IDN, All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- js aos -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
