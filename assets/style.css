@@ -4,6 +4,16 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+.animate__animated {
+    animation-delay: 1.4s;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-aos] {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
 .hero.col img {
     width: 100%;
 }
